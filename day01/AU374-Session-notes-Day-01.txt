@@ -232,6 +232,44 @@ Unit-1-# Red Hat Ansible Automation Platform 2
  Ansible Core -> ansible-navigator (RUN and test)
  ANsible COre -> ANsible Controller & unified UI.
 
+- Managing Ansible Project Materials Using Git:-
+ Working Tree (git add file) -> Staging Area (git commit) -> "Local repository" -> "remote repository"
+ 
+- Main point for git w.r.t AAPv25:- To provide version-controlled, collabocative lifecycle management for playbooks,roles and intenteries.
+
+- Every changes is tracable via commit (commit ID) -> integrity & auditability for enterprise automation.
+- AAP controller integrated directly with Git Project it pulls playbooks duing job launches.
+  Web UI (Project -> Job template deployment).
+- Project layout:-
+project/
+ - inventories/
+ - roles/
+ - playbooks/
+ - collections/
+ - ansible.cfg 
+ - ansible-navigator.yaml 
+
+- Git configuration:-
+  $ git config --global user.name 'Chandra Prakash'
+  $ git config --global user.email cprakash@host.example.com 
+  $ git config --global push.default simple
+  $ git config -l
+  
+ 
+git clone - git int  
+ DO modification:-
+ git add .
+ git commit -m update 
+ git push 
+ 
+ 
+---------------
+Variables:-
+ define within Playbook (vars:)
+ define variable in sperate myvar.yaml file and source to main playbook.
+ group_vars 
+ host_vars 
+ 
  
 	
 
