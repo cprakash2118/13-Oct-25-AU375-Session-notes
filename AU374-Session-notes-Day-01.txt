@@ -10,6 +10,8 @@
   03:45 PM to 05:00 PM - Final Session of the day.  
   last 30 mins (LAB part)
 
+---------------------------------------------------------------------------------
+
 Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
 - ROL - RedHat Online Learning 
 - https://rol.redhat.com (Use Red Hat Login ID)
@@ -20,6 +22,7 @@ Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
    - Click on "Lab" and access your lab. 
 - Access "Workstation" node via console login (Click on "OPEN CONSOLE" and login.   
 
+-----------------------------------------------------------------------------------
 Point-02-#
 - Product - Red Hat Ansible Automation Platform (AAPv25)
 - Reference Links:-
@@ -27,6 +30,30 @@ Point-02-#
   https://www.redhat.com/en/ansible-collaborative?intcmp=7015Y000003t7aWQAQ
   https://docs.ansible.com/
   
-
-  
-
+-----------------------------------------------------------------------------------
+Point-03-#
+- TOC (Table Of Conetents) - AU374 - AAPv25.
+  Total 9 Units + Comprehensive Review
+  Chapter 1. Developing Playbooks with Ansible Automation Platform 2
+    - INtro to AAPv25
+	- AAP via Git (Git Projects)
+	- Recomm Best practics w.r.t AAP 
+  Chapter 2. Managing Ansible Content Collections and Automation Execution Environments
+    - Ansible Content Collections (find/install/use)
+    - Automation Execution Environments (EE) - Use 
+  Chapter 3. Running Playbooks with Automation Controller.
+    - Ansible Automation Controller (Web based UI)
+	- Running Playbooks via Ansible Controller.
+  Chapter 4. Working with Ansible Configuration Settings
+  Chapter 5. Managing Inventories (Static/Dynamic inventories).
+  Chapter 6. Managing Task Execution
+  Chapter 7. Transforming Data with Filters and Plug-ins
+  Chapter 8. Coordinating Rolling Updates
+  Chapter 9. Creating Ansible Content Collections and Automation Execution Environments  
+ 
+- Classroom Environments:-
+  User's Detail:-
+    student/student  (sudo acces)
+	root/redhat 
+	devops/redhat    (passwordless authentication [ssh access]/Passworkless authorization (sudo access)
+	
