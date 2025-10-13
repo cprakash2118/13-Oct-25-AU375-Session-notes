@@ -1,0 +1,14 @@
+# https://github.com/cprakash2118/13-Oct-25-AU375-Session-notes
+
+Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
+- ROL - RedHat Online Learning 
+- https://rol.redhat.com (Use Red Hat Login ID)
+- Post successful login 
+   - Dashboad and click on "Join" - AU374 - Developing Advanced Automation with Red Hat Ansible Automation Platform
+   - Overview |LAB |Resources
+   - Click on "Resources" then click on "Access BookSelf" - Access/Download eBook (AU374).
+   - Click on "Lab" and access your lab.   
+
+
+# Product - Red Hat Ansible Automation Platform:-
+
