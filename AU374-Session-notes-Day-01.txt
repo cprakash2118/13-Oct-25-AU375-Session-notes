@@ -57,3 +57,71 @@ Point-03-#
 	root/redhat 
 	devops/redhat    (passwordless authentication [ssh access]/Passworkless authorization (sudo access)
 	
+	workstation.lab.example.com [Jump]
+	servera-f.lab.example.com   [Managed host]
+	aap.lab.example.com         [Controller node]
+	git.lab.example.com         [git server - Version Controlling]
+	
+- Access workstation node (as student user)
+Custom LAB:-
+$ whoami 
+student 
+$ mkdir work ; cd work 
+$ pwd
+/home/student/work 
+$ touch inventory 
+$ vim inventory
+[prod]
+server[a:d].lab.example.com 
+
+[dev]
+servere.lab.example.com 
+
+[test]
+serverf.lab.example.com 
+
+$ cat inventory
+ 
+- Use ansible (ansible ad-hoc commands)
+$ ansible prod -i inventory --list-hosts 
+$ ansible dev -i inventory --list-hosts 
+$ ansible test -i inventory --list-hosts 
+
+$ ansible all -i inventory --list-hosts 
+$ ansible ungrouped -i inventory --list-hosts 
+
+************ ungrouped concept 
+$ vim inventory
+server01.lab.example.com 
+[prod]
+server[a:d].lab.example.com 
+
+[dev]
+servere.lab.example.com 
+
+[test]
+serverf.lab.example.com 
+
+$ ansible ungrouped -i inventory --list-hosts
+server01.lab.example.com 
+
+Note: remove "server01.lab.example.com" entry from inventory file.
+**************
+
+
+Let's execute few modules:-
+
+$ ansible prod -i inventory -m ping  
+$ ansible dev -i inventory -m command -a "uptime"   
+$ ansible test -i inventory -m command -a "uptime ; echo -------------"  
+Note: Above command not work as command module can only execute single command/program at a time.
+
+$ ansible prod -i inventory -m shell -a "uptime ; echo ----------------"
+$ ansible prod -i inventory -m user -a "name=john state=present"
+$ ansible prod -i inventory -m shell -a "id john"
+
+$ ansible prod -i inventory -m user -a "name=john state=absent"
+$ ansible prod -i inventory -m shell -a "id john"
+
+
+Module - ping/shell/user - built modules [Example ansible.builtin.user ]
