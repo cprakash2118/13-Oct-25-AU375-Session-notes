@@ -177,7 +177,63 @@ New method:-
  
  $  ansible-navigator run -m stdout playbook-example-01.yaml -m stdout --eei aap.lab.example.com/ee-supported-rhel8
 
+***************************************************************************************
+Unit-1-# Red Hat Ansible Automation Platform 2
+-1) AAP 2 as a modular distributed AUtomation Platform:-
+   - AAP 2 represent the evalution from "Standalone - ansible-playbook" into a distributed, service-based automation ecosystem.
+    * Distributed architecture:- seperate layers for control,execution, content and analytics.
+    * Modular service:- Controller, Event driven Controller, private Automation Hub and analytics.
+    * Enterprise benefits:- scalability, Secure segmentation, cross-team collaboration.
+  
+-2) INstallation Methods:-
+   - Contaierized
+   - RPM (YUM/DNF repo) - We will use this method to deploy AAP 2.
+   - OpenShift Operator (Just install operator via CLI/Web COnsole).
 
+-3) AAP 2 core components:-
+   - Ansible Core 2.16 
+     * Deinfe the YAML automation laguage (play,tasks,roles).
+	 * Provide run time logic (loops,conditions, delegation, block-rescue etc).
+	 * Supplies core CLIs(ansible, ansible-playbook, ansible-galaxy).
+	 
+	 ansible.builtin.dnf 
+	 ansible.builtin.copy 
+	 ansible.builtin.files etc 
+
+   - ANsible Execution Environments (AEEs / EE).
+     * Ansible Core + Required COllection + Python deps + System tools.
+	 * Red Hat Published EEs (Execution Environment).
+	   - ee-minimal-rhel8:latest      (Minimal footprint - Base image for custom build)
+	   - ee-supported-rhel8:latest    ( Include command collections and plugins ).
+
+   - Ansible Execution Environment Builder.
+     ansible-builder create custom images using below files:
+      Dependencies:-
+      - galaxy - requirements.yml 
+      - python - requirements.txt 
+      - system - bindep.txt
+	  
+	  $ sudo dnf install ansible-builder
+	  $ ansible-builder build -t ee-custom:rhel9 
+	
+	- ansible content Navigator (ansible-navigator).
+	  * Execute ansible playbook [ansible-navigator run ]
+	  * Inventory inspection  [ansible-navigator images]
+	  * ansible-navigator generally seperate "ANsible Execution Environment and Ansible COntrol node".
+	 
+	- Unified User Interface & Enterprise INtegration:-
+	   - Automation Controller - run jobs/workflows
+	   - Event-Driven ANsible COntroller 
+	   - Private automation hub 
+	   - Ansible analytics - insight dashboards.
+	   
+ SUmmary flow:-
+ Ansible Core -> EE (Pre-Built or Custom via Builder)
+ Ansible Core -> ansible-navigator (RUN and test)
+ ANsible COre -> ANsible Controller & unified UI.
+
+ 
+	
 
 
 
