@@ -1,0 +1,9 @@
+---
+- name: Playbook example
+  hosts: dev 
+  tasks:
+    - name: Task-01 - Display message.
+      # debug: - Old method  
+      # Below is new method to create playbook.
+      ansible.builtin.debug:
+        msg: "This is task-01" 

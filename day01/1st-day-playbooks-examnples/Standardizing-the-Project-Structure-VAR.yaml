@@ -1,0 +1,17 @@
+---
+- name: variable example 
+  hosts: dev 
+  vars_files:
+   - myvar.yaml
+  tasks:
+    - name: Task-01 - Display-01
+      ansible.builtin.debug:
+        msg: "My value is {{ var1}} "
+
+    - name: Task-02 - Display-2
+      ansible.builtin.debug:
+        msg: "My value is {{ var2}} "
+
+    - name: Task-03 - Display-03
+      ansible.builtin.debug:
+        msg: "My value is {{ var3}} "

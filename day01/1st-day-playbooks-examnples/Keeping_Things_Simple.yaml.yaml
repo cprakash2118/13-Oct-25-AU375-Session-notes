@@ -1,0 +1,37 @@
+---
+- name:  Keeping Things Simple example - Not good approach for playbook
+  hosts: dev 
+  tasks:
+    - name: Postfix is installed and updated   - This appache for playbook is not correct
+      ansible.builtin.dnf: name=postfix state=latest
+      notify: restart_postfix
+      changed_when: True
+
+    - name: Postfix is running - This appache for playbook is not correct
+      ansible.builtin.service: name=postfix state=started
+  handlers:
+    - name: restart_postfix
+      ansible.builtin.service: name=rsyslog state=restarted 
+
+# ------------------------------------------------------------------------------------
+
+- name:  Keeping Things Simple example - Good approach for playbook
+  hosts: dev 
+  tasks:
+    - name: Postfix is installed and updated   - correct approach 
+      ansible.builtin.dnf: 
+        name: postfix 
+        state: latest
+      notify: restart_postfix
+      changed_when: True
+
+    - name: Postfix is running - This is write approach.
+      ansible.builtin.service: 
+         name: postfix 
+         state: started
+  handlers:
+    - name: restart_postfix
+      ansible.builtin.service: 
+        name: rsyslog 
+        state: restarted 
+

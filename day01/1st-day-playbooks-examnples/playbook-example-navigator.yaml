@@ -1,0 +1,30 @@
+---
+- name: Playbook example for ansible-navigator
+  hosts: dev 
+  tasks:
+   - name: Install the latest version of Apache
+     ansible.builtin.dnf:
+       name: "{{ item }}"
+       state: latest
+     loop: 
+        - httpd
+        - mutt
+        - firewalld 
+        - samba 
+   - name: Start and enable service.
+     ansible.builtin.service:
+       name: "{{ item }}"
+       state: started 
+       enabled: true 
+     loop: 
+         - httpd
+         - firewalld 
+         - rsyslog
+
+   - name: Task-03 - 
+     ansible.builtin.debug:
+       msg: "This is task-03"
+
+   - name: Task-04 - 
+     ansible.builtin.debug:
+       msg: "This is task-04"
