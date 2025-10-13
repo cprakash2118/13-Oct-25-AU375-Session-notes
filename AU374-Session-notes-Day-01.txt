@@ -1,5 +1,15 @@
 # https://github.com/cprakash2118/13-Oct-25-AU375-Session-notes
 
+# Timing details:-
+  09:00 AM to 10:30 AM - Session01 
+  10:30 AM to 10:45 AM - Tea Break 
+  10:45 AM to 01:00 PM - Session02
+  01:00 PM to 01:50 PM (+/- 5mins) - Lunch Break 
+  01:55 PM to 03:30 PM - Session03
+  03:30 PM to 03:45 PM - Tea Break 
+  03:45 PM to 05:00 PM - Final Session of the day.  
+  last 30 mins (LAB part)
+
 Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
 - ROL - RedHat Online Learning 
 - https://rol.redhat.com (Use Red Hat Login ID)
@@ -10,6 +20,13 @@ Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
    - Click on "Lab" and access your lab. 
 - Access "Workstation" node via console login (Click on "OPEN CONSOLE" and login.   
 
+Point-02-#
+- Product - Red Hat Ansible Automation Platform (AAPv25)
+- Reference Links:-
+  https://ansible.com 
+  https://www.redhat.com/en/ansible-collaborative?intcmp=7015Y000003t7aWQAQ
+  https://docs.ansible.com/
+  
 
-# Product - Red Hat Ansible Automation Platform:-
+  
 
