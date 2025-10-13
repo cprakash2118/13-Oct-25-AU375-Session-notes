@@ -7,7 +7,8 @@ Point-01-# LAB/eBook access for AAPv25 (Ansible Automation Platform):-
    - Dashboad and click on "Join" - AU374 - Developing Advanced Automation with Red Hat Ansible Automation Platform
    - Overview |LAB |Resources
    - Click on "Resources" then click on "Access BookSelf" - Access/Download eBook (AU374).
-   - Click on "Lab" and access your lab.   
+   - Click on "Lab" and access your lab. 
+- Access "Workstation" node via console login (Click on "OPEN CONSOLE" and login.   
 
 
 # Product - Red Hat Ansible Automation Platform:-
