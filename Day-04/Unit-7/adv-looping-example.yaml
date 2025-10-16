@@ -1,0 +1,32 @@
+---
+- name: Adv Looping example-01 
+  hosts: dev 
+  vars: 
+    group_list:
+      - unixadm   
+      - dbadm     
+      - storageadm
+      - wintel    
+      - middleware
+  tasks: 
+    - name: Group Management.
+      ansible.builtin.group:
+        name: "{{ item }}"
+        state: present 
+      loop: "{{ group_list }}"
+
+    - name: User Management.
+      vars:
+         password_var: "{{ 'redhat' | password_hash('sha512') }}"
+      ansible.builtin.user:
+        name: "{{ item.user_name }}"
+        group: "{{ item.group_p }}"
+        groups: "{{ item.group_s }}"
+        uid: "{{ item.uid_no }}"
+        password: "{{ password_var }}" 
+      loop: 
+        - {user_name: user1 , group_p: unixadm , group_s: dbadm , uid_no: 12345}
+        - {user_name: user2 , group_p: dbadm , group_s: unixadm , uid_no: 12344}
+        - {user_name: user3 , group_p: storageadm , group_s: unixadm , uid_no: 12343}
+        - {user_name: user4 , group_p: wintel , group_s: unixadm, uid_no: 12333}
+        - {user_name: user5 , group_p: middleware, group_s: dbadm , uid_no: 12245}
