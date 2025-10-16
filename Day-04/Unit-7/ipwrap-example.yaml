@@ -1,0 +1,14 @@
+---
+- name: Make address URL-safe (wrap IPv6)
+  hosts: localhost
+  gather_facts: false
+  vars:
+    listips: ["192.168.2.1", "2001::1", "ff02::1", "www.redhat.com"]
+  tasks:
+    - name: Wrap IPV6 directly (Note:- Keeps non IPs)
+      ansible.builtin.debug:
+        var: listips | ansible.utils.ipwrap
+    - name: CLean invalid, then wrap IPv6
+      ansible.builtin.debug:
+        var: listips | ansible.utils.ipaddr | ansible.utils.ipwrap
+

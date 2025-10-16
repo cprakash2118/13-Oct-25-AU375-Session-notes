@@ -1,0 +1,14 @@
+- name: PUll network components and nth address.
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    ip_cidr: "192.0.2.1/24"
+    network: "192.0.2.0/24"
+  tasks:
+    - name: Task-01
+      ansible.builtin.debug:
+        msg: >
+         - "{{ ip_cidr | ansible.utils.ipaddr('address') }}" # 192.0.2.1 
+         - "{{ ip_cidr | ansible.utils.ipaddr('netmask') }}" # 255.255.255.0
+         - "{{ ip_cidr | ansible.utils.ipaddr('prefix') }}"  # 24
+         - "{{ ip_cidr | ansible.utils.ipaddr('network') }}" # 192.0.2.0

@@ -1,0 +1,22 @@
+---
+- name: Validate & Seperate the hosts vs Network.
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    listips:
+      - 192.168.2.1
+      - 10.0.0.128/25 
+      - 172.24.10.0/255.255.255.0
+      - www.redhat.com
+  tasks:
+    - name: All valid addresses (hosts or nets)
+      ansible.builtin.debug:
+        var: listips | ansible.utils.ipaddr 
+
+    - name: Only hosts
+      ansible.builtin.debug:
+        var: listips | ansible.utils.ipaddr('host')
+
+    - name: Only networks 
+      ansible.builtin.debug:
+        var: listips | ansible.utils.ipaddr('net')

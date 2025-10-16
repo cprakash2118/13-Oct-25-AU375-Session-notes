@@ -1,0 +1,15 @@
+---
+- name: Delegate and capture facts into hostvars of delgate.
+  hosts: serverb.lab.example.com
+  gather_facts: false
+  tasks:
+    - name: Set facts ib serverb.lab.example.com but delegate to client.
+      ansible.builtin.set_fact:
+        #myfact: "delegated-info"
+        myfact: Where am I set?
+      delegate_to: servera.lab.example.com
+      delegate_facts: true 
+
+    - name: Read back facts stored under delegate host.
+      ansible.builtin.debug: 
+        msg: "{{ hostvars['servera.lab.example.com']['myfact'] }}"

@@ -1,0 +1,10 @@
+---
+- name: Get network information.
+  hosts: dev 
+  tasks:
+    - name: Get the system details.
+      ansible.builtin.debug:
+        msg: >
+           - "IP Address - {{ ansible_default_ipv4.address }}"
+           - "IP MAc Addr- {{ ansible_default_ipv4.macaddress }}"
+           - "IP Addv4-type - {{ ansible_default_ipv4.type }}"

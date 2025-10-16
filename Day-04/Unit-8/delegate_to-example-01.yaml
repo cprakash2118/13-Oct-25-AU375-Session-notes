@@ -1,0 +1,17 @@
+---
+- name: Check uptime on each prod node
+  hosts: prod,all 
+  serial: 1
+  tasks:
+    - name: Task-01 
+      ansible.builtin.shell: uname -n
+
+    - name: Task-02
+      ansible.builtin.shell: uname -n
+      delegate_to: serverf.lab.example.com
+      register: delegate_outcome
+
+    - name: Show delegated output 
+      ansible.builtin.debug:
+        var: delegate_outcome.stdout 
+      

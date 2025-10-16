@@ -1,0 +1,19 @@
+---
+- name: Work with usable ranage and hosts checks
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    net: "192.0.2.0/24" 
+  tasks:
+    - name: Display unable range for the network.
+      ansible.builtin.debug:
+        msg: "{{ net | ansible.utils.ipaddr('range_usable')}}"
+
+    - name: Is 192.0.2.5 a usable host on the network?
+      ansible.builtin.debug:
+        msg: "{{ net | ansible.utils.network_in_usable('192.0.2.5')}}"
+
+    - name: Display next usable host from the given IP
+      ansible.builtin.debug:
+        msg: "{{ net | ansible.utils.ipaddr('next_usable')}}"
+
