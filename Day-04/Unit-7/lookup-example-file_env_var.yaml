@@ -1,0 +1,13 @@
+---
+- name: Combine file & env lookups 
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    user_name: "{{ lookup('ansible.builtin.env', 'USER')}}"
+    motd_text: "{{ lookup('ansible.builtin.file', 'file1') | default('No MOTD Found', true) }}"
+  tasks:
+    - name: Show runtime info 
+      ansible.builtin.debug:
+        msg: 
+          - "User running playbook - {{ user_name }}"
+          - "System MOTD text - {{ motd_text }}"

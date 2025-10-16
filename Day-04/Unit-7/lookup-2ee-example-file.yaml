@@ -1,0 +1,10 @@
+---
+- name: Read system configuration file.
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    file_contents: "{{ lookup('ansible.builtin.file','/etc/group') }}"
+  tasks:
+    - name: Show the contents from lookup
+      ansible.builtin.debug:
+        msg: "{{ file_contents }}"

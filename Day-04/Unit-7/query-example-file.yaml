@@ -1,0 +1,14 @@
+---
+- name: Read system configuration file.
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    # Combine contents of two files into one variable.
+    #file_list: "{{ query('ansible.builtin.file','file1','file2') }}"
+    file_list: "{{ query('ansible.builtin.file','file1') }}"
+  tasks:
+    - name: Display each file contents seperately
+      ansible.builtin.debug:
+        #msg: "{{ file_contents }}"
+        var:  item
+      loop: "{{ file_list }}"

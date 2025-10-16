@@ -1,0 +1,16 @@
+---
+- name: Lookup & loop
+  hosts: localhost
+  gather_facts: false
+  vars:
+    file_list:
+     - files/file1
+     - files/file2
+     - files/file3
+  tasks:
+    - name: Read from file contents.
+      ansible.builtin.debug:
+        msg: >
+          "{{ lookup('ansible.builtin.file', item) }}"
+      loop: "{{ file_list }}" 
+  
