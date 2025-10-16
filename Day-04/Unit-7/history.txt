@@ -1,0 +1,1000 @@
+  118  cp -rpv Standardizing-the-Project-Structure-VAR-2example.yaml 
+  119  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  120  cp -rpv Standardizing-the-Project-Structure-VAR.yaml Standardizing-the-Project-Structure-VAR-2example.yaml 
+  121  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  122  tree groups/
+  123  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  124  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --syntax 
+  125  which alias 
+  126  which eei-name 
+  127  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --syntax --eei-name aap.lab.example.com/ee-supported-rhel8:latest
+  128  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --syntax --eei aap.lab.example.com/ee-supported-rhel8:latest
+  129  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  130  ll
+  131  vim inventory 
+  132  tree groups/
+  133  vim groups/dev 
+  134  tree]
+  135  mv groups/test /tmp/
+  136  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  137  ll
+  138  mv groups group_vars
+  139  ll
+  140  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  141  mv hosts host_vars
+  142  ll
+  143  rm -rf *.json 
+  144  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  145  ls -lrth 
+  146  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  147  cp -rpv group_vars/dev host_vars/dev 
+  148  vim host_vars/dev 
+  149  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  150  vim host_vars/dev 
+  151  mv group_vars group_vars.old 
+  152  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  153  ll
+  154  vim host_vars/dev 
+  155  mv host_vars/dev host_vars/serverc.lab.example.com
+  156  tree 
+  157  mv group_vars.old group_vars
+  158  tree
+  159  cat group_vars/dev 
+  160  cat host_vars/serverc.lab.example.com 
+  161  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest
+  162  tree 
+  163  rm -rf *.json 
+  164  ll
+  165  cd ..
+  166  ll
+  167  git clone https://github.com/cprakash2118/13-Oct-25-AU375-Session-notes
+  168  cp -rpv work 13-Oct-25-AU375-Session-notes/1st-day-playbooks-examnples
+  169  ll
+  170  cd 13-Oct-25-AU375-Session-notes/
+  171  pwd
+  172  ll
+  173  tree 1st-day-playbooks-examnples/
+  174  ll
+  175  mkdir day01
+  176  mv *.png day01/
+  177  ll
+  178  mv AU374-Session-notes-Day-01.txt day01/
+  179  mv 1st-day-playbooks-examnples day01/
+  180  ll
+  181  tree day01/
+  182  ll
+  183  cd day01/
+  184  ll
+  185  mkdir screenshots
+  186  mv *.png screenshots/
+  187  ll
+  188  git status 
+  189  git add .
+  190  git status 
+  191  git push 
+  192  ll
+  193  tree
+  194  git status 
+  195  git commit -m update 
+  196  git push 
+  197  ll
+  198  cd ..
+  199  ll
+  200  git status 
+  201  git add .
+  202  git status 
+  203  git commit -m update 
+  204  git push 
+  205  ll
+  206  cd day01/
+  207  pwd
+  208  ll
+  209  cd 1st-day-playbooks-examnples/
+  210  pwd
+  211  ll
+  212  vim Standardizing-the-Project-Structure.yaml
+  213  vim Keeping_Things_Simple.yaml.yaml
+  214  ll
+  215  vim Standardizing-the-Project-Structure-VAR.yaml
+  216  vim Standardizing-the-Project-Structure.yaml
+  217  vim -O Standardizing-the-Project-Structure.yaml Standardizing-the-Project-Structure-VAR.yaml Standardizing-the-Project-Structure-VAR-2example.yaml
+  218  :q!
+  219  ll
+  220  ansible-galaxy --help 
+  221  ansible-galaxy role --help 
+  222  mkdir rol
+  223  ansible-galaxy role  init --help
+  224  ansible-galaxy role  init --init-path=roles apache 
+  225  tree roles/
+  226  vim roles/apache/tasks/main.yml 
+  227  vim roles/apache/vars/main.yml 
+  228  vim roles/apache/defaults/main.yml 
+  229  vim group_vars/dev 
+  230  vim host_vars/
+  231  vim host_vars/serverc.lab.example.com 
+  232  wq
+  233  vim group_vars/dev 
+  234  ll
+  235  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  236  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  237  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  238  vim roles-example-var.yaml 
+  239  ansible-navigator run -m stdout roles-example-var.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  240  vim roles/apache/vars/main.yml 
+  241  vim roles/apache/defaults/main.yml 
+  242  ansible-navigator run -m stdout roles-example-var.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  243  vim roles/apache/vars/main.yml 
+  244  ansible-navigator run -m stdout roles-example-var.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  245  ls -lrth 
+  246  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  247  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  248  vim group_vars/dev 
+  249  vim host_vars/serverc.lab.example.com 
+  250  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  251  vim host_vars/serverc.lab.example.com 
+  252  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  253  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  254  vim roles/apache/vars/main.yml 
+  255  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  256  vim host_vars/serverc.lab.example.com 
+  257  mv host_vars host_vars-bkp 
+  258  vim host_vars-bkp/serverc.lab.example.com 
+  259  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  260  vim roles/apache/vars/main.yml 
+  261  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  262  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  263  ls -lrth 
+  264  rm -rf *.json 
+  265  ll
+  266  vim Standardizing-the-Project-Structure-VAR-2example.yaml
+  267  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  268  vim myvar.yaml 
+  269  mv host_vars-bkp host_vars
+  270  ansible-navigator run -m stdout Standardizing-the-Project-Structure-VAR-2example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  271  vim register-example-playbook.yaml
+  272  ansible-navigator doc -m stdout stat  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  273  vim register-example-playbook.yaml
+  274  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest --syntax
+  275  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  276  vim register-example-playbook.yaml
+  277  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  278  #output2.stat.exists
+  279  vim register-example-playbook
+  280  vim register-example-playbook.yaml 
+  281  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  282  vim register-example-playbook.yaml 
+  283  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  284  ansible-navigator run -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest --syntax
+  285  ansible-navigator lint -m stdout register-example-playbook.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  286  cp -rpv register-example-playbook.yaml lint-example.yaml 
+  287  vim lint-example.yaml 
+  288  ansible-navigator lint -m stdout lint-example.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  289  vim lint-example.yaml 
+  290  ansible-navigator lint -m stdout lint-example.yaml  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  291  ansible version 
+  292  ansible --version 
+  293  ll
+  294  vim ansible.cfg 
+  295  ansible --version 
+  296  pwd
+  297  ls -l roles
+  298  ll
+  299  mkdir mycollection 
+  300  ls -l
+  301  rm -rf *.json 
+  302  ll
+  303  tree my
+  304  tree mycollection/
+  305  ansible-galaxy --help 
+  306  ansible-galaxy collection install --help 
+  307  #ansible-galaxy collection install ~/Downloads/ansible-posix-1.5.4.tar.gz -p 
+  308  ll
+  309  ansible-galaxy collection install ~/Downloads/ansible-posix-1.5.4.tar.gz -p ./mycollection
+  310  ansible-galaxy collection list -p ./mycollection/
+  311  ansible-navigator doc -l 
+  312  ansible-navigator doc -l --eei aap.lab.example.com 
+  313  ansible-navigator doc -l --eei aap.lab.example.com/ee-supported-rhel8 
+  314  ansible-navigator doc ansible.builtin.dnf -m stdout --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  315  ansible-navigator doc ansible.builtin.dnf  --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  316  l
+  317  pwd
+  318  ll
+  319  ansible-galaxy collection list 
+  320  cat ansible.cfg | grep collec
+  321  pwd
+  322  echo "/home/student/13-Oct-25-AU375-Session-notes/day01/1st-day-playbooks-examnples"
+  323  ls -ld mycollection
+  324  ll
+  325  mkdir mycollection-2
+  326  ls -ld mycollection
+  327  ls -ld mycollection-2/
+  328  tree mycollection-2/
+  329  ansible-galaxy collection install ~/Downloads/redhat-rhel_system_roles-1.21.1.tar.gz -p ./mycollection-2/
+  330  ansible-galaxy collection list 
+  331  ls -ld mycollection*
+  332  vim ansible.cfg 
+  333  ansible-galaxy collection list 
+  334  :q
+  335  vim ansible.cfg 
+  336  ansible-galaxy collection list 
+  337  vim mycollection-2/ansible_collections/redhat/rhel_system_roles/roles/selinux/README.md 
+  338  vim myselinux-collection-role-example.yaml 
+  339  vim mycollection-2/ansible_collections/redhat/rhel_system_roles/roles/selinux/README.md 
+  340  vim myselinux-collection-role-example.yaml 
+  341  vim inventory 
+  342  ansible-navigator run -m stdout myselinux-collection-role-example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest --syntax 
+  343  ansible-navigator lint -m stdout myselinux-collection-role-example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  344  ansible-navigator run -m stdout myselinux-collection-role-example.yaml --eei aap.lab.example.com/ee-supported-rhel8:latest 
+  345  cd
+  346   lab start manage-finding
+  347  cd manage-finding/
+  348  pwd
+  349  ll
+  350  cat ansible.cfg 
+  351  vim ansible.cfg 
+  352  mkdir collection 
+  353  ll
+  354  #ansible-galaxy collection install infra.aap_utilities
+  355  #ansible-galaxy collection install ansible.netcommon -p collections/
+  356  ansible-galaxy collection install ansible.netcommon -p collections/
+  357  ansible-galaxy collection list 
+  358  ansible-galaxy collection list -p collectios
+  359  vim ansible.cfg 
+  360  ansible-galaxy collection list -p collectios
+  361  ansible-galaxy collection list 
+  362  ll
+  363  ls -l collection
+  364  mv collection /tmp/
+  365  ll
+  366  vim ansible.cfg 
+  367  ansible-galaxy collection list 
+  368  vim ansible.cfg 
+  369  ansible-galaxy collection list 
+  370  ansible-galaxy --help 
+  371  ansible-galaxy collection --help 
+  372  ansible-galaxy collection install  redhat.openshift:3.0.1 -p collections/
+  373  ansible-galaxy collection list 
+  374  vim collections/requirements.yml
+  375  ansible-galaxy collection install  -r collections/requirements.yml -p collections/
+  376  ansible-galaxy collection list 
+  377  ansible-galaxy collection install  redhat.rhel_system_roles -p collections/
+  378  ansible-galaxy collection install  rhel_system_roles -p collections/
+  379  ansible-galaxy collection install redhat.rhel_system_roles -p collections/
+  380  ansible-galaxy collection list 
+  381  vim ansible.cfg 
+  382  ansible-galaxy collection install redhat.rhel_system_roles -p collections/
+  383  ansible-galaxy collection list 
+  384  cd
+  385  cd -
+  386  ansible-navigator images --help | grep inspect 
+  387  ansible-navigator images --help | grep inspe
+  388  ansible-navigator images inspect ee-supported-rhel8:latest 
+  389  ansible-navigator images inspect ee-supported-rhel8:latest  --eei ee-supported-rhel8
+  390  cd
+  391   lab start manage-selecting
+  392  lab finish manage-finding
+  393  pwd
+  394  ll
+  395  cd work/
+  396  pwd
+  397  ll
+  398  cd ..
+  399  mkdir Unit-4
+  400  cd Unit-4/
+  401  pwd
+  402  ll
+  403  touch inventory ansible.cfg ansible-navigator.yml 
+  404  file * 
+  405  vim inventory 
+  406  file * 
+  407  ansible --version 
+  408  mv ansible.cfg ansible.cfG
+  409  ansible --version 
+  410  export ANSIBLE_CONFIG=/var/tmp/ansible.cfg 
+  411  env | grep ANSI
+  412  ansible --version 
+  413  touch /var/tmp/ansible.cfg
+  414  ansible --version 
+  415  env | grep ANSIBL
+  416  mv ansible.cfG ansible.cfg
+  417  touch ~/.ansible.cfg 
+  418  ansible --version 
+  419  env | grep ANSIBL
+  420  unset ANSIBLE_CONFIG 
+  421  env | grep ANSIBL
+  422  ansible --version 
+  423  ll
+  424  mv ansible.cfg ansible.cfg-BKP
+  425  ansible --version 
+  426  mv /home/student/.ansible.cfg /home/student/.ansible.cfg-K
+  427  ansible --version 
+  428  cat /etc/ansible/ansible.cfg 
+  429  nsible-config init --disabled > ansible-bkp.cfg
+  430  ansible-config init --disabled > ansible-bkp.cfg
+  431  ls -l
+  432  mv ansible.cfg-BKP ansible.cfg
+  433  ll
+  434  file *
+  435  cat ansible-bkp.cfg | grep "^\["
+  436  cat ansible-bkp.cfg | grep "^\["> ansible.cfg 
+  437  vim ansible.cfg 
+  438  ll
+  439  rm -rf ansible-bkp.cfg 
+  440  ll
+  441  vim ansible-navigator.yml 
+  442  ll
+  443  vim playbook.yaml 
+  444  ansible-navigator run playbook.yaml --syntax
+  445  ansible-navigator run playbook.yaml 
+  446  vim -O inventory ansible.cfg ansible-navigator.yml playbook.yaml 
+  447  vim -O inventory ansible.cfg 
+  448  vim -o ansible.cfg ansible-navigator.yml 
+  449  vim playbook.yaml 
+  450  ansible-navigator config 
+  451  ansible-navigator config view
+  452  ansible-navigator config list 
+  453  ansible-navigator config 
+  454  ansible-navigator config  dump
+  455  vim -O inventory ansible.cfg ansible-navigator.yml playbook.yaml 
+  456  ansible-navigator config  dump
+  457  vim ansible.cfg 
+  458  ansible-navigator config  dump
+  459  ll
+  460  vim ansible-navigator.yml 
+  461  ansible-navigator config  dump
+  462  ll
+  463  ansible-navigator run playbook.yaml 
+  464  ll
+  465  ansible-navigator run playbook.yaml 
+  466  ll
+  467  vim ansible-navigator.yml 
+  468  ansible-navigator run playbook.yaml 
+  469  ll
+  470  rm -rf *.json 
+  471  ll
+  472  ansible-navigator run playbook.yaml 
+  473  ll
+  474  export ANSIBLE_NAVIGATOR_CONFIG=/var/tmp/ansible-navigator.yml
+  475  cp -rpc ansible-navigator.yml /var/tmp/
+  476  cp -rpv ansible-navigator.yml /var/tmp/
+  477  ansible-navigator config  dump
+  478  env | grep ANS
+  479  ansible-navigator config  dump
+  480  export ANSIBLE_CONFIG=/var/tmp/ansible.cfg 
+  481  ansible-navigator config  dump
+  482  ansible --version 
+  483  cat /var/tmp/ansible.cfg
+  484  unset ANSIBLE_CONFIG 
+  485  ansible --version 
+  486  ansible-navigator config  dump
+  487  ll
+  488  vim ansible-navigator.yml 
+  489  ll
+  490  vim -O ansible.cfg ansible-navigator.yml 
+  491  ansible dev -m shell -a "id" 
+  492  vim ansible.cfg 
+  493  ansible dev -m shell -a "id" 
+  494  vim ansible.cfg 
+  495  ansible dev -m shell -a "id" 
+  496  vim ansible.cfg 
+  497  ansible dev -m shell -a "id" 
+  498  vim ansible.cfg 
+  499  ansible dev -m shell -a "id" 
+  500  vim ansible.cfg 
+  501  ansible dev -m shell -a "id" 
+  502  vim ansible.cfg 
+  503  ansible dev -m shell -a "id" 
+  504  vim ansible.cfg 
+  505  ansible dev -m shell -a "id" 
+  506  cd
+  507  lab start config-vscode
+  508  ll
+  509  mkdir Unit-5 
+  510  cp -rpv Unit-4/ansible* Unit-5/
+  511  cp -rpv Unit-4/inventory* Unit-5/
+  512  cp -rpv Unit-4/playbook.yaml Unit-5/
+  513  cd Unit-5/
+  514  pwd
+  515  ll
+  516  rm -rf *.log
+  517  ll
+  518  vim ansible-navigator.yml 
+  519  ansible-navigator images
+  520  ll
+  521  vim ansible.cfg 
+  522  ll
+  523  mv inventory inventory1 
+  524  mkdir inventory
+  525  mv inventory1 inventory
+  526  cd inventory/
+  527  owd
+  528  kk
+  529  ll
+  530  pwd
+  531  ll
+  532  cat inventory1 
+  533  vim inventory2
+  534  ll
+  535  vim anyname
+  536  cd  .
+  537  tree
+  538  cd ..
+  539  tree
+  540  cat ansible.cfg | grep inventory 
+  541  ansible all --list-hosts
+  542  ansible ungrouped --list-hosts
+  543  vim inventory/inventory1 
+  544  ansible ungrouped --list-hosts
+  545  vim inventory/inventory1 
+  546  ansible ungrouped --list-hosts
+  547  ansible test --list-hosts
+  548  vim inventory/inventory1 
+  549  ansible test --list-hosts
+  550  ansible ungrouped --list-hosts
+  551  lab start inventory-dynamic
+  552  cd
+  553  lab start inventory-dynamic
+  554  lab finish config-vscode
+  555  lab start inventory-dynamic
+  556  ls -lrth 
+  557  cp -rpv dynamic/*.py Unit-5/
+  558  cp -rpv dynamic/hosts  Unit-5/
+  559  cd Unit-5/
+  560  pwd
+  561  ll
+  562  mv *.py hosts inventory
+  563  tree
+  564  cd inventory/
+  565  pwd
+  566  ll
+  567  vim inventorya.py 
+  568  chmod 755 *.py 
+  569  ll
+  570  ./inventorya.py --list-host
+  571  ./inventorya.py --list 
+  572  ./inventoryw.py --list 
+  573  vim hosts 
+  574  ansible webservers --list-hosts
+  575  ll
+  576  cd ..
+  577  ansible webservers --list-hosts
+  578  grep -ir webservers * 
+  579  vim inventory/hosts 
+  580  cat inventory/hosts 
+  581  ll
+  582  tree
+  583  chmod 644 inventory/*.py 
+  584  tree
+  585  ansible webservers --list-hosts
+  586  chmod 755 inventory/*.py 
+  587  ansible webservers --list-hosts
+  588  tree
+  589  vim inventory/inventory1 
+  590  ansible nonprod --list-hosts
+  591   ansible-navigator inventory --graph
+  592  ll
+  593   ansible-navigator inventory --graph -m stdout
+  594  vim ansible.cfg 
+  595  ll
+  596  cd inventory/
+  597  pwd
+  598  ll
+  599  vim inventory1 
+  600  vim inventory1.yaml inventory1 
+  601  vim -O inventory1.yaml inventory1 
+  602  vim inventory1.yaml 
+  603  cp -rpv inventory1-update.yaml 
+  604  cp -rpv inventory1-update.yaml  inventory1-update.yaml
+  605  cp -rpv inventory1.yaml  inventory1-update.yaml
+  606  vim inventory1-update.yaml 
+  607  vim inventory1-update.yaml inventory1
+  608* vim -O inventory1.yaml inventory1
+  609  ansible nonprod -i inventory1-update.yaml --list-hosts
+  610  ansible dev -i inventory1.yaml --list-hosts
+  611  ll
+  612  cat inventory1
+  613  #ansible-navigator inventory -i origin_inventory --list --yaml --mode stdout
+  614  ansible-navigator inventory -i inventory1 --list --yaml -m stdout > inventory1-update-final.yaml 
+  615  cd ..
+  616  cp -rpv inventory/inventory1 .
+  617  ansible-navigator inventory -i inventory1 --list --yaml -m stdout > inventory1-update-final.yaml 
+  618  vim inventory1-update-final.yaml 
+  619  vim -O inventory1-update-final.yaml inventory/inventory1-update.yaml 
+  620  vim inventory/inventory1-update.yaml
+  621  ll
+  622  cd  inventory/
+  623  pwd
+  624  ll
+  625  ansible nonprod -i inventory1-update.yaml --list-hosts
+  626  ll
+  627  rm -rf inventory1-update-final.yaml
+  628  vim inventory1-update.yaml
+  629  vim inventory
+  630  vim inventory1
+  631  vim -O inventory1-update.yaml inventory1
+  632  cp -rpv inventory1 ../
+  633  cd ..
+  634  ansible-navigator inventory -i inventory1 --list --yaml --mode stdout
+  635  cd inventory/
+  636  lll
+  637  ll
+  638  vim -O inventory1-update.yaml inventory1
+  639  ll
+  640  cd ..
+  641  ll
+  642  ansible-galaxy role init --help 
+  643  #ansible-galaxy role init --init-path=roles apache 
+  644  mkdir roles
+  645  ansible-galaxy role init --init-path=roles apache 
+  646  vim roles/apache/vars/main.yml 
+  647  vim roles/apache/tasks/main.yml 
+  648  vim roles/apache/vars/main.yml 
+  649  vim roles/apache/defaults/main.yml 
+  650  ll
+  651  vim main-playbook.yaml
+  652  mkdir group_vars
+  653  mkdir host_vars
+  654  ll
+  655  vim group_vars/dev
+  656  vim main-playbook.yaml
+  657  vim group_vars/dev
+  658  cat inventory
+  659  cat inventory/inventory1
+  660  :q
+  661  vim host_vars/servere.lab.example.com
+  662  ll
+  663  ansible-navigator run main-playbook.yaml --syntax
+  664  vim ansible-navigator.yml 
+  665  ansible-navigator run main-playbook.yaml
+  666  cd inventory/
+  667  ll
+  668  mv ansible-navigator.log /tmp/
+  669  cat anyname 
+  670  cd ..
+  671  ansible-navigator run main-playbook.yaml
+  672  vim roles/apache/vars/main.yml 
+  673  ansible-navigator run main-playbook.yaml
+  674  vim roles/apache/vars/main.yml 
+  675  vim roles/apache/defaults/main.yml 
+  676  ansible-navigator run main-playbook.yaml
+  677  ll
+  678  vim main-playbook.yaml 
+  679  vim group_vars/dev 
+  680  vim host_vars/servere.lab.example.com 
+  681  vim roles/apache/defaults/
+  682  vim roles/apache/defaults/main.yml 
+  683  vim roles/apache/vars/main.yml 
+  684  ansible-navigator run main-playbook.yaml
+  685  vim main-playbook.yaml 
+  686  ansible-navigator run main-playbook.yaml
+  687  vim roles/apache/vars/main.yml 
+  688  ansible-navigator run main-playbook.yaml
+  689  vim roles/apache/vars/main.yml 
+  690  vim main-playbook.yaml 
+  691  ansible-navigator run main-playbook.yaml
+  692  vim host_vars/servere.lab.example.com 
+  693  ansible-navigator run main-playbook.yaml
+  694  ansible-navigator run main-playbook.yaml -e var1=testing 
+  695  vim main-playbook.yaml 
+  696  ansible-navigator run main-playbook.yaml -e var1=testing 
+  697  vim main-playbook.yaml 
+  698  ansible-navigator run main-playbook.yaml -e var1=testing 
+  699  vim main-playbook.yaml 
+  700  ansible-navigator run main-playbook.yaml -e var1=testing 
+  701  vim main-playbook.yaml 
+  702  ansible-navigator run main-playbook.yaml -e var1=testing 
+  703  vim main-playbook.yaml 
+  704  ansible-navigator run main-playbook.yaml -e var1=testing 
+  705  ansible dev -m setup |less
+  706  vim main-playbook.yaml 
+  707  ansible-navigator run main-playbook.yaml -e var1=testing 
+  708  vim main-playbook.yaml 
+  709  ansible-navigator run main-playbook.yaml -e var1=testing 
+  710  vim main-playbook.yaml 
+  711  ansible-navigator run main-playbook.yaml -e var1=testing 
+  712  ansible dev -m setup |less
+  713  vim main-playbook.yaml 
+  714  ansible-navigator run main-playbook.yaml -e var1=testing 
+  715  ll
+  716  vim inventory/inventory1
+  717  vim main-playbook.yaml 
+  718  ansible-navigator run main-playbook.yaml -e var1=testing 
+  719  ansible-navigator run main-playbook.yaml -e var1=testing -K 
+  720  vim ansible.cfg 
+  721  ll
+  722  cd ..
+  723  mkdir Unit-6
+  724  cp -rpv Unit-5/ansible* Unit-6/
+  725  cp -rpv Unit-5/inventory/inventory1 Unit-6/
+  726  cd Unit-6/
+  727  pwd
+  728  ll
+  729  rm -rf ansible-navigator.log 
+  730  ll
+  731  vim ansible.cfg 
+  732  vim playbook.yaml 
+  733  ansible-navigator run playbook.yaml 
+  734  vim inventory1 
+  735  ansible-navigator run playbook.yaml 
+  736  vim inventory1 
+  737  vim playbook.yaml 
+  738  mv inventory1 inventory
+  739  ansible-navigator run playbook.yaml 
+  740  :q
+  741  mv inventory1 inventory
+  742  vim playbook.yaml 
+  743  ansible-navigator run playbook.yaml 
+  744  vim playbook.yaml 
+  745  ansible-navigator run playbook.yaml 
+  746  vim playbook.yaml 
+  747  ansible-navigator run playbook.yaml 
+  748  vim playbook.yaml 
+  749  ansible-navigator run playbook.yaml 
+  750  output2.stdout
+  751  vim playbook.yaml 
+  752  ansible-navigator run playbook.yaml 
+  753  vim playbook.yaml 
+  754  ansible-navigator run playbook.yaml 
+  755  vim playbook.yaml 
+  756  ansible-navigator run playbook.yaml 
+  757  vim playbook.yaml 
+  758  ansible-navigator run playbook.yaml 
+  759  vim playbook.yaml 
+  760  cp -rpv playbook.yaml playbook-2.yaml 
+  761  vim playbook-2.yaml 
+  762  ansible-navigator run playbook-2.yaml --syntax 
+  763  ansible-navigator run playbook-2.yaml 
+  764  vim playbook-2.yaml 
+  765  ansible-navigator run playbook-2.yaml 
+  766  vim playbook-2.yaml 
+  767  ansible-navigator run playbook-2.yaml 
+  768  vim playbook-2.yaml 
+  769  ansible-navigator run playbook-2.yaml 
+  770  vim playbook-2.yaml 
+  771  ansible-navigator run playbook-2.yaml 
+  772  vim playbook-2.yaml 
+  773  ansible-navigator run playbook-2.yaml 
+  774  vim playbook-2.yaml 
+  775  ansible-navigator run playbook-2.yaml 
+  776  ll
+  777  vim  Controlling-the-Order-of-Execution.yaml 
+  778  ll
+  779  ansible-galaxy role init --init-path=roles apache 
+  780  ll
+  781  tree 
+  782  vim roles/apache/tasks/main.yml 
+  783  ll
+  784  vim Controlling-the-Order-of-Execution.yaml 
+  785  ansible-navigator run Controlling-the-Order-of-Execution.yaml --syntax
+  786  ansible-navigator run Controlling-the-Order-of-Execution.yaml
+  787  vim Controlling-the-Order-of-Execution.yaml 
+  788  ansible-navigator run Controlling-the-Order-of-Execution.yaml
+  789  vim Controlling-the-Order-of-Execution.yaml 
+  790  ansible-navigator run Controlling-the-Order-of-Execution.yaml
+  791  vim Controlling-the-Order-of-Execution.yaml 
+  792  ansible-navigator run Controlling-the-Order-of-Execution.yaml
+  793  vim Controlling-the-Order-of-Execution.yaml 
+  794  ansible-navigator run Controlling-the-Order-of-Execution.yaml
+  795  cp -rpv Controlling-the-Order-of-Execution.yaml include_example.yaml 
+  796  cp -rpv Controlling-the-Order-of-Execution.yaml import_example.yaml 
+  797  vim include_example.yaml 
+  798  vim import_example.yaml 
+  799  vim -O include_example.yaml import_example.yaml 
+  800  vim include_example.yaml 
+  801  ll
+  802  vim roles/apache/tasks/main.yml 
+  803  ansible-navigator run include_example.yaml --syntax
+  804  ansible-navigator run include_example.yaml 
+  805  ansible-navigator run import_example.yaml --syntax
+  806  vim roles/apache/tasks/main.yml 
+  807  ansible-navigator run import_example.yaml --syntax
+  808  ansible-navigator run import_example.yaml 
+  809  vim main-workflow.yaml 
+  810  ansible-navigator run main-workflow.yaml --synax
+  811  ansible-navigator run main-workflow.yaml --syntax
+  812  ansible-navigator run main-workflow.yaml 
+  813  cp -rpv main-workflow.yaml main-workflow-2.yaml 
+  814  vim main-workflow-2.yaml
+  815  ansible-navigator run main-workflow-2.yaml 
+  816  vim main-workflow-2.yaml
+  817  ansible-navigator run main-workflow-2.yaml --syntax
+  818  ansible-navigator run main-workflow-2.yaml 
+  819  vim main-workflow-2.yaml
+  820  ansible-navigator run main-workflow-2.yaml 
+  821  vim main-workflow-2.yaml
+  822  cp -rpv main-workflow.yaml main-workflow-handlers.yaml 
+  823  vim main-workflow-handlers.yaml
+  824  ansible-navigator run main-workflow-handlers.yaml 
+  825  vim main-workflow-handlers.yaml
+  826  ansible-navigator run main-workflow-handlers.yaml 
+  827  vim main-workflow-handlers.yaml
+  828  ansible-navigator run main-workflow-handlers.yaml 
+  829  vim ansible.cfg 
+  830  ansible-navigator run main-workflow-handlers.yaml 
+  831  ll
+  832  vim handlers-example.yaml 
+  833  ansible-navigator run handlers-example.yaml --syntax 
+  834  vim handlers-example.yaml 
+  835  ansible-navigator run handlers-example.yaml --syntax 
+  836  ansible-navigator run handlers-example.yaml 
+  837  vim handlers-example.yaml 
+  838  ansible-navigator run handlers-example.yaml --syntax 
+  839  ansible-navigator run handlers-example.yaml 
+  840  vim handlers-example.yaml 
+  841  cp -rpv handlers-example.yaml handlers-example-2.yaml 
+  842  vim handlers-example-2.yaml
+  843  ansible-navigator handlers-example-2.yaml --syntax
+  844  ansible-navigator run  handlers-example-2.yaml --syntax
+  845  ansible-navigator run  handlers-example-2.yaml 
+  846  vim handlers-example-2.yaml
+  847  ansible-navigator run  handlers-example-2.yaml 
+  848  cp -rpv handlers-example-2.yaml handlers-example-3_pre_tasks.yaml 
+  849  vim handlers-example-3_pre_tasks.yaml
+  850  ansible-navigator run handlers-example-3_pre_tasks.yaml --syntax
+  851  ansible-navigator run handlers-example-3_pre_tasks.yaml 
+  852  vim handlers-example-3_pre_tasks.yaml
+  853  ll
+  854  pwd
+  855  ll
+  856  cd ..
+  857  ll
+  858  mkdir Day-02
+  859  mkdir Day-03
+  860  cp -rpv Unit-4 Day-02/
+  861  cp -rpv Unit-5 Day-03/
+  862  cp -rpv Unit-6 Day-03/
+  863  cd Day-03/
+  864  pwd
+  865  ll
+  866  tree
+  867  ll
+  868  cd Unit-
+  869  cd Unit-6/
+  870  pwd
+  871  ll
+  872  vim tag-example-01.yaml 
+  873  vim ~/.vimrc
+  874  vim tag-example-01.yaml 
+  875  ansible-navigator run tag-example-01.yaml --syntax
+  876  ansible-navigator run tag-example-01.yaml 
+  877  vim tag-example-01.yaml 
+  878  ansible-navigator run tag-example-01.yaml 
+  879  ansible-navigator run tag-example-01.yaml --tags beta
+  880  ansible-navigator run tag-example-01.yaml --tags alpha
+  881  ansible-navigator run tag-example-01.yaml --skip-tags alpha
+  882  vim tag-example-01.yaml 
+  883  ansible-navigator run tag-example-01.yaml --skip-tags alpha
+  884  ansible-navigator run tag-example-01.yaml --tags alpha
+  885  ansible-navigator run tag-example-01.yaml 
+  886  cp -rpv tag-example-01.yaml tag-example-02-with-never.yaml 
+  887  vim tag-example-02-with-never.yaml
+  888  ansible-navigator run tag-example-02-with-never.yaml --syntax
+  889  ansible-navigator run tag-example-02-with-never.yaml 
+  890  ansible-navigator run tag-example-02-with-never.yaml --tags beta
+  891  ansible-navigator run tag-example-02-with-never.yaml --tags alpha
+  892  ansible-navigator run tag-example-02-with-never.yaml --tags alpha,beta
+  893  ll
+  894  vim tasks.yaml 
+  895  vim import-include-example.yaml 
+  896  mv tasks.yaml tasks-1.yaml 
+  897  mv tasks.yaml tasks-2.yaml 
+  898  cp -rpv tasks-1.yaml tasks-2.yaml 
+  899  vim tasks-2.yaml 
+  900  vim tasks-1.yaml 
+  901  vim import-include-example.yaml 
+  902  ansible-navigator run import-include-example.yaml --syntax
+  903  vim import-include-example.yaml 
+  904  ansible-navigator run import-include-example.yaml --syntax
+  905  vim import-include-example.yaml 
+  906  ansible-navigator run import-include-example.yaml --syntax
+  907  vim import-include-example.yaml 
+  908  ansible-navigator run import-include-example.yaml --syntax
+  909  vim import-include-example.yaml 
+  910  ansible-navigator run import-include-example.yaml --syntax
+  911  ansible-navigator run import-include-example.yaml 
+  912  ansible-navigator run import-include-example.yaml --tags beta
+  913  vim import-include-example.yaml 
+  914  vim tasks-1.yaml
+  915  ansible-navigator run import-include-example.yaml --tags alpha
+  916  ansible-navigator run import-include-example.yaml --tags beta 
+  917  vim /home/student/Day-03/Unit-6/tasks-1.yaml
+  918  vim tasks-1.yaml
+  919  ll
+  920  vim block_rescue_always-example.yaml 
+  921  ansible-navigator run block_rescue_always-example.yaml --syntax
+  922  ansible-navigator run block_rescue_always-example.yaml 
+  923  vim block_rescue_always-example.yaml 
+  924  ansible-navigator run block_rescue_always-example.yaml 
+  925  ll
+  926  mkdir Optimizing-Execution-for-Speed
+  927  cd Optimizing-Execution-for-Speed/
+  928  pwd
+  929  l
+  930  cp -rpv ../ansible* .
+  931  cp -rpv ../inventory .
+  932  ll
+  933  rm -rf ansible-navigator.log 
+  934  vim ansible-navigator.yml 
+  935  vim playbook.yaml 
+  936  ansible-navigator run playbook.yaml 
+  937  vim playbook.yaml 
+  938  ansible-navigator run playbook.yaml ;
+  939  cp -rpv playbook.yaml playbook-gather_facts_specific.yaml 
+  940  vim playbook-gather_facts_specific.yaml
+  941  vim ansible.cfg 
+  942  cp -rpv playbook.yaml playbook-2.yaml 
+  943  vim playbook-2.yaml 
+  944  ansible-navigator run playbook-2.yaml --syntax
+  945  ansible-navigator run playbook-2.yaml 
+  946  vim playbook-gather_facts_specific.yaml 
+  947  ansible-navigator run playbook-gather_facts_specific.yaml --syntax
+  948  vim playbook-gather_facts_specific.yaml 
+  949  ansible-navigator run playbook-gather_facts_specific.yaml --syntax
+  950  ansible-navigator run playbook-gather_facts_specific.yaml \
+  951  ansible-navigator run playbook-gather_facts_specific.yaml 
+  952  ll
+  953  vim install-pkg-01.yaml 
+  954  cp -rpv install-pkg-01.yaml install-pkg-02.yaml 
+  955  vim install-pkg-02.yaml
+  956  vim -O install-pkg-01.yaml install-pkg-02.yaml 
+  957  ssh servera -l root
+  958  ansible-navigator run install-pkg-01.yaml --syntax
+  959  ansible-navigator run install-pkg-01.yaml 
+  960  vim ansible.cfg 
+  961  ansible-navigator run install-pkg-01.yaml 
+  962  ll
+  963  ansible-navigator run  playbook-gather_facts_specific.yaml 
+  964  vim ansible.cfg 
+  965  ansible-navigator run  playbook-gather_facts_specific.yaml 
+  966  cd
+  967  cd -
+  968  pwd
+  969  ll
+  970   ansible-navigator doc -t filter -l -m stdout
+  971  ll
+  972  cd 
+  973  mkdir Unit-7
+  974  cp -rpv Unit-6/ansible* Unit-7/
+  975  cp -rpv Unit-6/inventory Unit-7/
+  976  cd Unit-7/
+  977  pwd
+  978  ll
+  979  vim playbook-filter-example-01.yaml 
+  980  ansible-navigator doc template 
+  981  vim playbook-filter-example-01.yaml 
+  982  ll
+  983  vim myfile
+  984  mv myfile myfile.j2
+  985  vim playbook-filter-example-01.yaml 
+  986  ansible-navigator run playbook-filter-example-01.yaml --syntax
+  987  ansible-navigator run playbook-filter-example-01.yaml 
+  988  vim playbook-filter-example-01.yaml 
+  989  ssh servere.lab.example.com 
+  990  ll
+  991  vim playbook-filter-example-01.yaml 
+  992  vim myfile.j2 
+  993  ansible-navigator run playbook-filter-example-01.yaml 
+  994  ssh servere.lab.example.com  
+  995  ll
+  996  vim playbook-filter-example-01.yaml 
+  997  vim myfile.j2 
+  998  ansible-navigator run playbook-filter-example-01.yaml 
+  999  ssh servere.lab.example.com   
+ 1000  ll
+ 1001  vim default_filter-example.yaml 
+ 1002  ansible-navigator default_filter-example.yaml --syntax
+ 1003  ansible-navigator run default_filter-example.yaml --syntax
+ 1004  ansible-navigator run default_filter-example.yaml 
+ 1005  ll
+ 1006  vim default_filter-example.yaml 
+ 1007  ll
+ 1008  vim filter-example-upper_lower_sort.yaml
+ 1009  ansible-navigator run filter-example-upper_lower_sort.yaml --syntax
+ 1010  ansible-navigator run filter-example-upper_lower_sort.yaml 
+ 1011  vim filter-example-upper_lower_sort.yaml
+ 1012  ansible-navigator run filter-example-upper_lower_sort.yaml 
+ 1013  vim filter-example-upper_lower_sort.yaml
+ 1014  ansible-navigator run filter-example-upper_lower_sort.yaml 
+ 1015  vim int-value-example-filter.yaml 
+ 1016  ansible-navigator run int-value-example-filter.yaml --syntax
+ 1017  ansible-navigator run int-value-example-filter.yaml 
+ 1018  vim int-value-example-filter.yaml 
+ 1019  ansible-navigator run int-value-example-filter.yaml 
+ 1020  vim int-value-example-filter.yaml 
+ 1021  date
+ 1022  vim int-value-example-filter.yaml 
+ 1023  ansible dev -m setup |less
+ 1024  vim int-value-example-filter.yaml 
+ 1025  ansible-navigator run int-value-example-filter.yaml 
+ 1026  vim int-value-example-filter.yaml 
+ 1027  ansible-navigator run int-value-example-filter.yaml 
+ 1028  vim int-value-example-filter.yaml 
+ 1029  ansible-navigator run int-value-example-filter.yaml 
+ 1030  vim int-value-example-filter.yaml 
+ 1031  ansible-navigator run int-value-example-filter.yaml 
+ 1032  vim int-value-example-filter.yaml 
+ 1033  ansible-navigator run int-value-example-filter.yaml 
+ 1034  vim int-value-example-filter.yaml 
+ 1035  ansible-navigator run int-value-example-filter.yaml 
+ 1036  vim int-value-example-filter.yaml 
+ 1037  ansible-navigator run int-value-example-filter.yaml 
+ 1038  vim int-value-example-filter.yaml 
+ 1039  ansible-navigator run int-value-example-filter.yaml 
+ 1040  vim int-value-example-filter.yaml 
+ 1041  ansible-navigator run int-value-example-filter.yaml 
+ 1042  vim dict_and_list.yaml 
+ 1043  ansible-navigator run dict_and_list.yaml --syntax
+ 1044  vim dict_and_list.yaml 
+ 1045  ansible-navigator run dict_and_list.yaml --syntax
+ 1046  vim dict_and_list.yaml 
+ 1047  ansible-navigator run dict_and_list.yaml --syntax
+ 1048  ansible-navigator run dict_and_list.yaml 
+ 1049  cd ..
+ 1050  ll
+ 1051  mkdir Day-04 
+ 1052  cp -rpv Unit-7 Day-04/
+ 1053  pwd
+ 1054  ll
+ 1055  mv 13-Oct-25-AU375-Session-notes /tmp/
+ 1056  git clone https://github.com/cprakash2118/13-Oct-25-AU375-Session-notes
+ 1057  ll
+ 1058  ls -l 13-Oct-25-AU375-Session-notes/
+ 1059  cp -rpv Day-0* 13-Oct-25-AU375-Session-notes/
+ 1060  cd  13-Oct-25-AU375-Session-notes/
+ 1061  pwd
+ 1062  ll
+ 1063  mv day01 Day-01 
+ 1064  ll
+ 1065  git status 
+ 1066  git add .
+ 1067  git status 
+ 1068  git commit -m update 
+ 1069  git push 
+ 1070  ll
+ 1071  cd Day-04/
+ 1072  pwd
+ 1073  ll
+ 1074  cd Unit-7/
+ 1075  pwd
+ 1076  ll
+ 1077  vim root_password_reset.yaml
+ 1078  ansible-navigator run root_password_reset.yaml --syntax
+ 1079  ansible-navigator run root_password_reset.yaml 
+ 1080  vim root_password_reset.yaml
+ 1081  cp -rpv root_password_reset.yaml root_password_reset_2.yaml 
+ 1082  vim root_password_reset_2.yaml
+ 1083  ansible-vault create root_password.txt 
+ 1084  cat root_password
+ 1085  cat root_password.txt 
+ 1086  ansible-playbook  --help | grep vault
+ 1087  #ansible-navigator run root_password_reset_2.yaml --ask-vault-password
+ 1088  vim my-file
+ 1089  ll
+ 1090  vim root_password.txt 
+ 1091  vim pin-file
+ 1092  ansible-navigator run root_password_reset_2.yaml --ask-vault-password=pin-file --syntax
+ 1093  ansible-playbook  --help | grep vault
+ 1094  ansible-navigator run root_password_reset_2.yaml --ask-vault-password-file=pin-file --syntax
+ 1095  #ansible-navigator run root_password_reset_2.yaml --ask-vault-password-file=pi 
+ 1096  ll
+ 1097  #ansible-navigator run root_password_reset_2.yaml --ask-vault-password-file=pin-file
+ 1098  ansible-navigator run root_password_reset_2.yaml --ask-vault-password-file=pin-file
+ 1099  ansible-navigator run root_password_reset_2.yaml --ask-vault-password
+ 1100  ansible-vault edit root_password.txt 
+ 1101  ll
+ 1102  vim root_password_reset_2.yaml 
+ 1103  ansible-vault edit root_password.txt 
+ 1104  ansible-navigator run root_password_reset_2.yaml --ask-vault-password-file=pin-file
+ 1105  ansible-playbook --help | grep vault
+ 1106  #ansible-navigator run root_password_reset_2.yaml --vault-password-file=pin
+ 1107  ll
+ 1108  ansible-navigator run root_password_reset_2.yaml --vault-password-file=pin-file
+ 1109  vim ansible.cfg 
+ 1110  ansible-navigator run root_password_reset_2.yaml --vault-password-file=pin-file
+ 1111  ls -lrth 
+ 1112  cat root_password_reset_2.yaml
+ 1113  cat root_password.txt
+ 1114  ll
+ 1115  ansible-navigator run root_password_reset.yaml
+ 1116  git status 
+ 1117  history > history.txt 
