@@ -1,0 +1,7 @@
+---
+- name: Example with ansible.cfg & ansible-navigator.yml 
+  hosts: dev 
+  tasks:
+    - name: Display task - task-01 
+      ansible.builtin.debug:
+        msg: "This is just testing"

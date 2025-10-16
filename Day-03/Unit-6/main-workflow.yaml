@@ -1,0 +1,17 @@
+---
+- name: Main workflow 
+  hosts: dev 
+  pre_tasks:
+    - name: Pre-Task - Pre-task-01 
+      ansible.builtin.debug: 
+        msg: "Pre-Task - Pre-Task-01"
+  roles:
+    - apache 
+  tasks:
+    - name: Task - task-01 
+      ansible.builtin.debug: 
+         msg: "Current Task"
+  post_tasks:
+    - name: Post-Task - Post-task-01 
+      ansible.builtin.debug: 
+        msg: "Posrt-Task - Post-Task-01"

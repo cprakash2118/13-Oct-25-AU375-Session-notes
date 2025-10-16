@@ -1,0 +1,21 @@
+---
+- name: Main playbook 
+  hosts: dev 
+  #gather_facts: false
+  roles:
+    - apache 
+  #vars:
+  #var1: playbook-variable-from-vars
+  tasks:
+    - name: Display task- from main playbook 
+      #vars:
+        #var1: playbook-variable-from-task 
+      ansible.builtin.debug:
+        msg: "Value of var1 - {{ var1}} "
+
+    - name: Display task- from main playbook - special variable - belongs to inventory
+      #vars:
+        #var1: playbook-variable-from-task 
+      ansible.builtin.debug:
+        #msg: "Value of special variable - {{ inventory_hostname }} {{ ansible_port}}  "
+        msg: "Value of special variable - {{ inventory_hostname }} {{ ansible_facts.fqdn}} {{ ansible_default_ipv4.address }}  {{ ansible_default_ipv4.macaddress }} {{  ansible_user}}"

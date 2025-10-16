@@ -1,0 +1,7 @@
+[web]
+server[a:d].lab.example.com 
+
+[db]
+server[e:f].lab.example.com
+
+

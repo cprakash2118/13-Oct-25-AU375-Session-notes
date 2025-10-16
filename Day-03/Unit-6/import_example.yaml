@@ -1,0 +1,12 @@
+---
+- name:  Controlling the Order of Execution
+  hosts: dev 
+  tasks:
+    - name: task01 - This is task 
+      ansible.builtin.debug:
+        msg: "This is task-01"
+  #roles:
+  #  - role: apache 
+    - name: task-03 - This is role execution - import_role.
+      ansible.builtin.import_role: 
+        name: apache  

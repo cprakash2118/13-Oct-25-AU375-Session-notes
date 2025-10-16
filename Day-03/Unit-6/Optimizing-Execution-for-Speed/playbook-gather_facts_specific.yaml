@@ -1,0 +1,19 @@
+---
+- name: Simaple playbook 
+  hosts: dev 
+  gather_facts: false 
+  tasks:
+    - name: Task-01 
+      ansible.builtin.debug:
+        msg: "Test"
+    - name: Collect only network-related facts
+      ansible.builtin.setup:
+        gather_subset:
+        - '!all'
+        - '!min'
+        - network
+      register: output
+
+    - name: DIsplay gather facts for specific.
+      ansible.builtin.debug:
+        var: output

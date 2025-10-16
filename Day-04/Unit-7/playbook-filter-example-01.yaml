@@ -1,0 +1,10 @@
+---
+- name: Filter example 
+  hosts: dev 
+  tasks:
+    - name: Task-01 - Display 
+      ansible.builtin.template:
+        src: myfile.j2
+        dest: /tmp/data-01
+        mode: '0644'
+ 

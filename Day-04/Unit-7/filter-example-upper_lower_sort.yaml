@@ -1,0 +1,17 @@
+---
+- name: Process variables using filters.
+  hosts: localhost
+  gather_facts: false 
+  vars:
+    servers: ["web01","db01","cache01"]
+    app_owner: "chandra"
+  tasks:
+    - name: Display uppercase owner.
+      ansible.builtin.debug:
+        msg: "Application Owner is {{ app_owner | upper }}"
+     
+    - name: show sorted comma list of servers.
+      ansible.builtin.debug:
+        msg: "Server list -  {{ servers | sort| join(',') }}"
+        #msg: "Server list -  {{ servers | sort| join(';') }}"
+     

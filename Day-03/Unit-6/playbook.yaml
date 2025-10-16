@@ -1,0 +1,23 @@
+---
+- name: Example for privilege escalation.
+  hosts: dev 
+
+  tasks:
+    - name: Task-01
+      become: true
+      ansible.builtin.shell: id
+      register: output1
+
+    - name: Task-02 
+      ansible.builtin.shell: id 
+      register: output2
+
+    - name: Task-03
+      ansible.builtin.debug:
+        #var: output1
+         msg: "{{output1.stdout}}"
+
+    - name: Task-04
+      ansible.builtin.debug:
+        #var: output2
+         msg: "{{ output2.stdout}}"

@@ -1,0 +1,10 @@
+---
+- name: Task2-01 - Direct task
+  ansible.builtin.debug:
+    msg: "This is task2-01 - Direct task" 
+- name: Task2-02 - Direct task
+  ansible.builtin.debug:
+    msg: "This is task2-02 - Direct task" 
+- name: Task2-03 - Direct task
+  ansible.builtin.debug:
+    msg: "This is task2-03 - Direct task" 

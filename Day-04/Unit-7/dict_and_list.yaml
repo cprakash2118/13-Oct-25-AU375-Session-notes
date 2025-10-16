@@ -1,0 +1,21 @@
+- name: converting between dictionaries and lists
+  hosts: localhost
+  vars:
+    characters_dict:
+      Douglas: Human
+      Marvin: Robot
+      Arthur: Human
+
+    characters_items:
+      - key: Douglas
+        value: Human
+      - key: Marvin
+        value: Robot
+      - key: Arthur
+        value: Human
+  tasks:
+    - name: converting between dictionaries and lists
+      ansible.builtin.debug:
+        msg: |
+         - "{{ characters_dict | dict2items }} is eq( characters_items )"
+         - "{{ characters_items | items2dict }} is eq( characters_dict )"

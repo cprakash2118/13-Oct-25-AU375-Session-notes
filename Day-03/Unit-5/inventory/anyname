@@ -1,0 +1,13 @@
+[managed]
+server[a:f].lab.example.com
+
+[controller]
+aap.lab.example.com 
+
+[git]
+git.lab.example.com 
+
+[other]
+utility.lab.example.com 
+bastion.lab.example.com 
+

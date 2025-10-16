@@ -1,0 +1,17 @@
+[prod]
+server[a:d].lab.example.com 
+
+[dev]
+servere.lab.example.com   ansible_user=student 
+
+[test]
+serverf.lab.example.com    new_password=redhat123-test 
+
+[nonprod:children]
+dev
+test
+
+[prod:vars]
+user_name=john 
+new_password=redhat123-prod
+

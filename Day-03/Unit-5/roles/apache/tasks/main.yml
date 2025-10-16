@@ -1,0 +1,5 @@
+---
+# tasks file for apache
+- name: Didplay task - from role 
+  ansible.builtin.debug:
+    msg: "Value of var1 is {{ var1 }}"

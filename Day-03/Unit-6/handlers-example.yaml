@@ -1,0 +1,40 @@
+---
+- name: Handlers example
+  hosts: dev 
+  tasks:
+    - name: Task-01
+      ansible.builtin.debug:
+        msg: "Task-01 display"
+      changed_when: true 
+
+    - name: Task-02
+      ansible.builtin.debug:
+        msg: "Task-02 display"
+      changed_when: true 
+      notify:
+         - handler-01
+
+    - name: Task-03
+      ansible.builtin.debug:
+        msg: "Task-03 display"
+      changed_when: true 
+      notify:
+         - handler-02
+
+    - name: Task-04
+      ansible.builtin.debug:
+        msg: "Task-04 display"
+      changed_when: true 
+  handlers:
+    - name: handler-01 
+      ansible.builtin.debug: 
+        msg: "Handler execution - handler-01"
+   #- name: Handler execution - handler-01 
+   #   ansible.builtin.debug: 
+   #     msg: "Handler execution - handler-01"
+   #   listen: handler-01
+
+    - name: Handler execution - handler-02
+      ansible.builtin.debug: 
+        msg: "Handler execution - handler-02"
+      listen: handler-02

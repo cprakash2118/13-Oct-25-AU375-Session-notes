@@ -1,0 +1,5 @@
+---
+# tasks file for apache
+- name: This task via role - task - role 
+  ansible.builtin.debug: 
+     msg: "This task via role - task - role" 

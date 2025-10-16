@@ -1,0 +1,22 @@
+---
+- name: Block rescue and always.
+  hosts: dev 
+  tasks:
+    - name: Block part 
+      block:
+        - name: Task-01 
+          ansible.builtin.debug:
+            msg: "Block Part"
+          #failed_when: true 
+      rescue:
+        - name: Task-02 
+          ansible.builtin.debug:
+            msg: "rescue Part-01"
+
+        - name: Task--03 
+          ansible.builtin.debug:
+            msg: "rescue Part-02"
+      always: 
+        - name: Task-04 - Always  
+          ansible.builtin.debug:
+            msg: "Always Part-01"

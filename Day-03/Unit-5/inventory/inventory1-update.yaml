@@ -1,0 +1,26 @@
+all:
+  children:
+     prod:
+       hosts:
+         servera.lab.example.com:
+           user_name: john 
+           new_password: redhat123-prod
+         serverb.lab.example.com:
+           user_name: john 
+           new_password: redhat123-prod
+         serverc.lab.example.com:
+           user_name: john 
+           new_password: redhat123-prod
+         serverd.lab.example.com:     
+           user_name: john 
+           new_password: redhat123-prod
+     nonprod: 
+       children:
+         dev:
+           hosts:
+             servere.lab.example.com:
+         test:
+           hosts:
+             serverf.lab.example.com:
+               new_password: redhat123-prod
+

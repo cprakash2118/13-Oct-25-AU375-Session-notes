@@ -1,0 +1,48 @@
+---
+- name: Handlers example
+  hosts: dev 
+  force_handlers: true 
+  pre_tasks:
+    - name: Pre_Tasks-01
+      ansible.builtin.debug:
+        msg: "Pre_Tasks-01 display"
+      changed_when: true 
+
+    - name: Pre_Tasks-02
+      ansible.builtin.debug:
+        msg: "Pre_Tasks-02 display"
+      changed_when: true 
+      notify:
+         - handler-01
+  tasks:
+    - name: Tasks-03
+      ansible.builtin.debug:
+        msg: "Tasks-03 display"
+      changed_when: true 
+      notify:
+         - handler-02
+
+  post_tasks:
+    - name: Post_Tasks-04
+      ansible.builtin.debug:
+        msg: "Post_Tasks-04 display"
+      changed_when: true 
+        #failed_when: true 
+
+    - name: Post_Tasks-05
+      ansible.builtin.debug:
+        msg: "Post_Tasks-05 display"
+      changed_when: true 
+  handlers:
+    - name: handler-01 
+      ansible.builtin.debug: 
+        msg: "Handler execution - handler-01"
+   #- name: Handler execution - handler-01 
+   #   ansible.builtin.debug: 
+   #     msg: "Handler execution - handler-01"
+   #   listen: handler-01
+
+    - name: Handler execution - handler-02
+      ansible.builtin.debug: 
+        msg: "Handler execution - handler-02"
+      listen: handler-02

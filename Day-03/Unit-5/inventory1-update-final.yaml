@@ -1,0 +1,16 @@
+all:
+  children:
+    nonprod:
+      children:
+        dev:
+          hosts:
+            servere.lab.example.com: {}
+        test:
+          hosts:
+            serverf.lab.example.com: {}
+    prod:
+      hosts:
+        servera.lab.example.com: {}
+        serverb.lab.example.com: {}
+        serverc.lab.example.com: {}
+        serverd.lab.example.com: {}

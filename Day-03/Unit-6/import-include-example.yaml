@@ -1,0 +1,12 @@
+---
+- name: Import and include example.
+  hosts: dev 
+  tasks:
+    - name: Include task - 1 
+      ansible.builtin.include_tasks: tasks-1.yaml 
+      tags: beta
+
+    - name: Import task - 2
+      ansible.builtin.import_tasks: tasks-2.yaml 
+      tags: alpha 
+     

@@ -1,0 +1,17 @@
+---
+- name: Tag example
+  hosts: dev 
+  gather_facts: false
+  tasks:
+    - name: task-01 - This execution for tag alpha 
+      ansible.builtin.debug:
+        msg: "This is tag alpha" 
+      tags: alpha
+      changed_when: true
+ 
+    - name: task-02 - This execution for tag beta
+      ansible.builtin.debug:
+        msg: "This is tag beta" 
+      tags: beta
+      changed_when: true
+   

@@ -1,0 +1,48 @@
+---
+- name: Int value example - filter 
+  hosts: localhost
+  vars:
+    myvar: 7.2
+  tasks:
+    - name: Date
+      ansible.builtin.debug:
+        #msg: "{{ ( ansible_facts['date_time']['hour'] | int ) + 1 }}"
+        #msg: "{{ ( ansible_facts['date_time']['hour'] | int ) }}"
+        msg: "{{ ( myvar | int ) }}"
+
+    - name: Square root
+      ansible.builtin.debug:
+        msg: "{{ 64 | root }}" 
+
+    - name: Sum
+      ansible.builtin.debug:
+        msg: "{{ [2, 4, 6, 8, 10, 12] | sum }}"
+
+    - name: All three of these assertions are true
+      #ansible.builtin.assert:
+      ansible.builtin.debug:
+        #that:
+        msg: |
+          - "{{ [ 2, 4, 6, 8, 1000, 12 ] | length }} is eq( 6 )"
+          - "{{ [ 2, 4, 6, 8, 10, 12 ] | first }} is eq( 2 )"
+          - "{{ [ 2, 4, 6, 8, 10, 12 ] | last }} is eq( 12 )"
+    - name: Random
+      ansible.builtin.debug:
+         msg: "{{ ['Douglas', 'Marvin', 'Arthur'] | random }}"
+       
+    - name: reverse & sort.
+      ansible.builtin.debug:
+        msg: |  
+          - "{{ [ 2, 4, 6, 8, 10 ] | reverse }} is eq( [ 10, 8, 6, 4, 2] )"
+          - "{{ [ 4, 8, 10, 6, 2 ] | sort }} is eq( [ 2, 4, 6, 8, 10 ] )" 
+
+    - name: Flatten turns nested lists on the left to list on the right
+      ansible.builtin.debug:
+        msg:
+         - "{{ [ 2, [4, [6, 8]], 10 ] | flatten }} is eq( [ 2, 4, 6, 8, 10] )"
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+---
+- name: INstall packages.
+  hosts: dev 
+  gather_facts: false 
+  tasks:
+    - name: INstall packages.
+      ansible.builtin.dnf:
+        name: 
+           - httpd
+           - firewalld 
+           - samba 
+           - mutt
+        state: present 
