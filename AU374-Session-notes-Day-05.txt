@@ -1,0 +1,178 @@
+8.5. Managing Rolling Updates:-
+- Control how many hosts run at once using "serial" 
+- max_fail_precentage 
+
+web_servers:
+ 20 servers 
+ 
+Default ansible deploy on all nodes (parallel execution):-
+
+Solution - Rolling Batches:-
+
+5 servers and serial=2 - 3 batches.
+Rolling update process:-
+Eg:-
+1-2 - 1st batch 
+3-4 - 2nd batch 
+5   - 3rd batch 
+
+
+200 server - 100 batches 
+20 server  - 10 batches
+----------------------
+serial: 2 
+serial: 2%    
+serial:
+ - 1      - Single host 
+ - 10%    - 10% of total host 
+ - 100%   - Rest all 
+ 
+max_fail_percentage: 30%  
+serial:
+ - 1      - Single host 
+ - 10%    - 10% of total host 
+ - 50%   - 25% all 
+
+
+max_fail_percentage: 30%  
+serial:
+ - 1      - Single host 
+ - 10%    - 10% of total host 
+ - 50%   - 25% all 
+tasks:
+  - name: task-01
+    ansible.builtin.debug:
+	  msg: test 
+	throttle: 1
+	
+
+max_fail_percentage: 30%  
+serial:
+ - 1      - Single host 
+ - 10%    - 10% of total host 
+ - 50%   - 25% all 
+order: sorted
+tasks:
+  - name: task-01
+    ansible.builtin.debug:
+	  msg: test 
+	throttle: 1
+		
+
+
+
+max_fail_percentage: 30%  
+serial:
+ - 1      - Single host 
+ - 10%    - 10% of total host 
+ - 50%   - 25% all 
+order: sorted
+tasks:
+  - name: task-01
+    ansible.builtin.debug:
+	  msg: test 
+	throttle: 1
+
+###################################################################
+Unit-9-# Writing Ansible Content Collections.
+- collections.
+
+collection_namespace/
+  collection_name/
+    roles/
+	plugins/
+	docs/
+	playbooks/
+	tests/
+	
+	
+collection_namespace=chandra_ns
+collection_name=au374
+
+Step-1 Create collection (namespace must be created/exist)
+$ mkdir work ; cd work 
+$ ansible-galaxy collection init chandra_ns.au374 
+$ tree 
+
+
+Step-2 Update/verify the required parameters.
+$ cd chandra_ns/au374 ; pwd
+$ vim meta/runtime.yml 
+requires_ansible: '>=2.9.10'
+
+$ ansible-galaxy role init --init-path roles=apache 
+$ tree roles
+
+================================================================
+9.3. Building a Custom Automation Execution Environment:-
+Provided by Red Hat.
+- ee-minimal-rhel8/9 
+- ee-supported-rhel8/9
+
+Each comes with common Ansible Content Collections, Python modules, and OS packages.
+- Frequently reuse specific collections, which is not invluded in official EEs.
+- Required collection(s) needs additional Python or system packages.
+- You need to resolve dependencies conflicts b/w the collection.
+
+-Image Information
+-General Information
+-Ansible Version and Collection 
+-Python Package
+-OS package 
+-Everything 
+
+
+Install tool to built EEs.
+# dnf install ansible-builder 
+- execution-environment.yml - Define the EE build specification. 
+- requirements.yml  - Lists ansible collection to embed 
+
+$vim execution-environment.yml 
+version X
+dependencies:
+ galaxy: requirements.yml 
+ python: requirements.txt 
+ system: bindep.txt 
+ 
+images:
+  base_image:
+     name: image-URL
+	 
+$ vim requirements.yml 
+collections:
+ - name: cisco.xyz.abc 
+ - name: vmware.123.xyz 
+
+$ vim requirements.txt 
+python-ldap
+netaddr
+
+$ vim bindep.txt
+git 
+
+
+Build 
+Push to AUtomation HUb.
+
+
+
+
+========================
+
+- run playbooks in Automation Controller that playbook depends on custom Ausinle COllection.
+- Integrate Custom EE env
+- Configure Automation HUB API Token
+
+
+https://aap.lab.example.com/pulp_ansible/galaxy/published/
+
+
+
+ https://git.lab.example.com/student/use-collection.git
+
+
+
+
+
+
+
