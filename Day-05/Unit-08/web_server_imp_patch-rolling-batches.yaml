@@ -1,0 +1,16 @@
+---
+- name: web_servers patch deployment 
+  hosts: web_servers 
+  serial: 2
+  tasks:
+    - name: COnfig change on apache servers.
+      ansible.builtin.debug: 
+        msg: "This is config changes"
+      changed_when: true
+
+    - name: COnfig change on apache servers - 2nd .
+      ansible.builtin.debug: 
+        msg: "This is config changes - 2nd "
+      failed_when: true
+
+

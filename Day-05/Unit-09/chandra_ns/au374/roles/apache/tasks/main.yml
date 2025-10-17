@@ -1,0 +1,5 @@
+---
+# tasks file for apache
+- name: This is apache role - via collection 
+  ansible.builtin.debug:
+    msg: "Task-01 - namespace=chandra_ns; collection=au374; role=apache"

@@ -1,0 +1,29 @@
+---
+- name: web_servers patch deployment 
+  hosts: web_servers 
+  order: sorted
+  serial: 
+     - 1
+     - 10% 
+     - 50% 
+     #- 100% 
+  tasks:
+    - name: Run once
+      ansible.builtin.debug: 
+        msg: "This is config changes"
+      changed_when: true
+      run_once: true 
+      delegate_to: workstation.lab.example.com
+
+    - name: COnfig change on apache servers.
+      ansible.builtin.debug: 
+        msg: "This is config changes"
+      changed_when: true
+      throttle: 1  # only one host execute this task at a time.
+
+    - name: COnfig change on apache servers - 2nd .
+      ansible.builtin.debug: 
+        msg: "This is config changes - 2nd "
+      #failed_when: true
+
+
